@@ -7,6 +7,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 
@@ -101,6 +102,16 @@ public class TestBase  {
         // set current sessionId
         String id = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
         sessionId.set(id);
+    }
+
+    /**
+     * Method that gets invoked after test.
+     * Dumps browser log and
+     * Closes the browser
+     */
+    @BeforeMethod
+    public void beforeMethod() throws Exception {
+        Thread.sleep(1690);
     }
 
     /**

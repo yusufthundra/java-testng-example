@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
@@ -13,6 +15,16 @@ import java.rmi.UnexpectedException;
 
 
 public class SimpleTest extends TestBase {
+
+    @BeforeSuite
+    public void beforeSuite() throws InterruptedException {
+        Thread.sleep(2300);
+    }
+
+    @AfterSuite
+    public void afterSuite() throws InterruptedException {
+        Thread.sleep(1300);
+    }
 
     @Test(dataProvider = "hardCodedBrowsers")
     public void test(String browser, String version, String os, Method method) throws Exception {
