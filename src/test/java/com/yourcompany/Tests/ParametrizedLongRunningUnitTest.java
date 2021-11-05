@@ -8,6 +8,11 @@ import static org.testng.Assert.assertEquals;
 
 public class ParametrizedLongRunningUnitTest {
 
+    @Test(dataProvider = "numbersObject", enabled="false")
+    public void ignoredTest(EvenNumber number) {
+        assertEquals(number.isEven(), number.getValue() % 2 == 0);
+    }
+    
     @Test
     @Parameters({"value", "isEven"})
     public void givenNumberFromXML_ifEvenCheckOK_thenCorrect(int value, boolean isEven) {
