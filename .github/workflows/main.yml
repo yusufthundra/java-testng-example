@@ -36,5 +36,5 @@ jobs:
         uses: actions/upload-artifact@v2
         if: success() || failure()
         with:
-          name: test-result-artifact
+          name: test-result-testng
           path: target/surefire-reports/
