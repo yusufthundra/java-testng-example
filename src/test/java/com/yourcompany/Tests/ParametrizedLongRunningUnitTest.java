@@ -8,7 +8,7 @@ import static org.testng.Assert.assertEquals;
 
 public class ParametrizedLongRunningUnitTest {
 
-    @Test(dataProvider = "numbersObject", enabled="false")
+    @Test(dataProvider = "numbersObject", enabled=false)
     public void ignoredTest(EvenNumber number) {
         assertEquals(number.isEven(), number.getValue() % 2 == 0);
     }
