@@ -3,18 +3,18 @@ import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class SkipExample extends TestBase{
-    @Test(enabled=false, dataProvider = "hardCodedBrowsers")
+public class SkipTest {
+    @Test(enabled=false)
     public void testCaseEnabling(){
         System.out.println("I'm Not Ready, please don't execute me");
     }
-    @Test(dataProvider = "hardCodedBrowsers")
+    @Test
     public void testCaseSkipException(){
         System.out.println("Im in skip exception");
         throw new SkipException("Skipping this exception");
     }
 
-    @Test (dataProvider = "hardCodedBrowsers")
+    @Test
     public void testCaseConditionalSkipException(){
         System.out.println("Im in Conditional Skip");
         if(!"asd".equals("fff"))
