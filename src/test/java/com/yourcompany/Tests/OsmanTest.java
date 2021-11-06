@@ -3,7 +3,7 @@ import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class SkipTest {
+public class OsmanTest {
     @Test(enabled=false)
     public void testCaseEnabling(){
         System.out.println("I'm Not Ready, please don't execute me");
