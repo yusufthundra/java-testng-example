@@ -7,6 +7,11 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class ParametrizedLongRunningUnitTest {
+    @Test
+    public void skippedTest(EvenNumber number) {
+        throw new SkipException("Message for console");
+    }
+    
 
     @Test(dataProvider = "numbersObject", enabled=false)
     public void ignoredTest(EvenNumber number) {
