@@ -15,6 +15,11 @@ public class OsmanTest {
     }
 
     @Test
+    public void testCaseRuntimeException(){
+        throw new RuntimeException("Runtime exception");
+    }
+
+    @Test
     public void testAssertFail(){
         Assert.assertEquals(0,1);
     }
