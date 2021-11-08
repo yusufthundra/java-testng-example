@@ -1,4 +1,5 @@
 package com.yourcompany.Tests;
+import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
@@ -11,6 +12,11 @@ public class OsmanTest {
     public void testCaseSkipException(){
         System.out.println("Im in skip exception");
         throw new SkipException("Skipping this exception");
+    }
+
+    @Test
+    public void testAssertFail(){
+        Assert.assertEquals(0,1);
     }
 
     @Test
